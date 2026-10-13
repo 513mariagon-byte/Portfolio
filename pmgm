@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>María González Martínez · Biotecnóloga</title>
+<meta name="description" content="Portfolio de María González Martínez, biotecnóloga especializada en control de calidad y análisis clínico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* ============ COLORES Y FUENTES (cámbialos aquí) ============ */
+:root{
+  --bg:#F2F6F3;--surface:#FFFFFF;--ink:#10231F;--muted:#4F625D;--line:#D5E0DA;
+  --green:#12372F;--leaf:#2F7A5F;--carot:#E8820C;--carot-ink:#8A4A00;--on-green:#F2F6F3;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0C1815;--surface:#13251F;--ink:#E8F0EC;--muted:#9DB2AA;--line:#24403A;
+  --green:#0A1F1A;--leaf:#5BC29A;--carot:#F59A2B;--carot-ink:#F5B25E;--on-green:#E8F0EC}}
+:root[data-theme="dark"]{--bg:#0C1815;--surface:#13251F;--ink:#E8F0EC;--muted:#9DB2AA;--line:#24403A;
+  --green:#0A1F1A;--leaf:#5BC29A;--carot:#F59A2B;--carot-ink:#F5B25E;--on-green:#E8F0EC}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--carot);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:5rem 0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:800;margin-bottom:2.2rem}
+
+/* ============ MENÚ ============ */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.logo{font:800 1.15rem var(--head);text-decoration:none}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+nav ul::-webkit-scrollbar{display:none}
+nav li a{text-decoration:none;font-size:.95rem;font-weight:500;color:var(--muted);white-space:nowrap;padding:.4rem 0;border-bottom:2px solid transparent}
+nav li a:hover{color:var(--ink);border-color:var(--carot)}
+@media(max-width:720px){.logo{display:none}}
+
+/* ============ CABECERA ============ */
+.hero{background:var(--green);color:var(--on-green);padding:4.5rem 0 5rem;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3rem,9vw,6.2rem);font-weight:800;letter-spacing:-.04em}
+.role{font:600 1.25rem var(--head);margin:1.4rem 0 .6rem;color:var(--carot)}
+.hero p{max-width:34rem;color:color-mix(in srgb,var(--on-green) 82%,transparent)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--carot);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--carot);color:#10231F}
+.btn.alt{color:var(--on-green)}
+
+/* Placa de Petri */
+.dish{position:relative;aspect-ratio:1;width:min(100%,380px);margin-inline:auto;border-radius:50%;
+  border:2px solid rgba(255,255,255,.25);
+  background:
+    radial-gradient(circle at 36% 30%,var(--carot) 0 3.2%,transparent 3.6%),
+    radial-gradient(circle at 60% 24%,#F7B34D 0 2.2%,transparent 2.6%),
+    radial-gradient(circle at 70% 52%,var(--carot) 0 4%,transparent 4.4%),
+    radial-gradient(circle at 44% 66%,#F7B34D 0 2.8%,transparent 3.2%),
+    radial-gradient(circle at 26% 54%,var(--carot) 0 1.8%,transparent 2.2%),
+    radial-gradient(circle at 58% 78%,var(--carot) 0 2.2%,transparent 2.6%),
+    radial-gradient(circle at 50% 50%,rgba(91,194,154,.22) 0 62%,rgba(255,255,255,.05) 63% 100%);
+  box-shadow:inset 0 0 0 14px rgba(255,255,255,.04),inset 0 0 60px rgba(0,0,0,.35)}
+.dish::after{content:"MG";position:absolute;inset:auto 8% 8% auto;font:800 1rem var(--head);color:rgba(255,255,255,.55);letter-spacing:.1em}
+.dish i{position:absolute;border-radius:50%;background:var(--carot);animation:grow 2.4s ease-out both}
+.dish i:nth-child(1){left:36%;top:30%;width:3.2%;aspect-ratio:1;animation-delay:.2s}
+.dish i:nth-child(2){left:70%;top:52%;width:4%;aspect-ratio:1;animation-delay:.6s}
+.dish i:nth-child(3){left:44%;top:66%;width:2.8%;aspect-ratio:1;animation-delay:1s}
+@keyframes grow{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:.9}}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.dish{width:min(70%,280px);order:-1;margin:0}}
+
+/* ============ PERFIL ============ */
+.profile{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.profile p{margin:0 0 1rem;max-width:36rem}
+.facts{display:grid;gap:.9rem;margin:0;padding:0;list-style:none}
+.facts li{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--carot);border-radius:6px 14px 14px 6px;padding:1rem 1.2rem}
+.facts b{display:block;font-family:var(--head);font-size:1.05rem}
+.facts span{color:var(--muted);font-size:.95rem}
+@media(max-width:820px){.profile{grid-template-columns:1fr;gap:2rem}}
+
+/* ============ LÍNEA TEMPORAL (formación y experiencia) ============ */
+.tl{list-style:none;margin:0;padding:0 0 0 1.8rem;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 2.2rem 1rem}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:calc(-1.8rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--leaf)}
+.tl li.now::before{background:var(--carot);border-color:var(--carot)}
+.when{font:600 .9rem var(--body);color:var(--carot-ink)}
+.tl h3{font-size:1.3rem;margin:.2rem 0 .1rem}
+.where{color:var(--muted);font-weight:500;margin:0 0 .5rem}
+.tl p{margin:0;max-width:44rem}
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+
+/* ============ HABILIDADES E IDIOMAS ============ */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skills>div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.6rem}
+.alt-bg .skills>div{background:var(--bg)}
+.skills h3{font-size:1.15rem;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.chips li{font-size:.9rem;padding:.3rem .8rem;border-radius:999px;background:color-mix(in srgb,var(--leaf) 14%,transparent);border:1px solid color-mix(in srgb,var(--leaf) 40%,transparent)}
+.lang{margin-bottom:1rem}
+.lang div{display:flex;justify-content:space-between;font-weight:500;margin-bottom:.35rem}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--leaf),var(--carot))}
+@media(max-width:900px){.skills{grid-template-columns:1fr}}
+
+/* ============ PROYECTOS Y PUBLICACIONES ============ */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.card{border:2px dashed var(--line);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.6rem;min-height:190px}
+.card .tag{align-self:flex-start;font-size:.8rem;font-weight:600;padding:.2rem .7rem;border-radius:99px;background:color-mix(in srgb,var(--carot) 20%,transparent);color:var(--carot-ink)}
+.card h3{font-size:1.2rem}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+/* Tarjeta real (proyecto o publicación ya completados) */
+.card.real{border:1px solid var(--line);background:var(--surface)}
+.card .meta{font-size:.85rem;font-weight:600;color:var(--carot-ink)}
+.card .more{margin-top:auto;font-weight:600;color:var(--leaf);text-decoration:none;border-bottom:2px solid var(--carot);align-self:flex-start}
+.lead{color:var(--muted);max-width:40rem;margin:-1.2rem 0 2rem}
+
+/* ============ CONTACTO ============ */
+footer{background:var(--green);color:var(--on-green);padding:4rem 0 3rem}
+footer h2{margin-bottom:1rem}
+footer p{max-width:34rem;margin:0 0 2rem;color:color-mix(in srgb,var(--on-green) 82%,transparent)}
+.links{display:flex;flex-wrap:wrap;gap:.8rem}
+small{display:block;margin-top:3rem;opacity:.65;font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ============ MENÚ ============ -->
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#inicio">María González</a>
+    <ul>
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#publicaciones">Publicaciones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ CABECERA ============ -->
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1>María González Martínez</h1>
+      <div class="role">Biotecnóloga · Control de calidad y análisis clínico</div>
+      <p>Estudio el Máster en Innovación y Desarrollo de Alimentos de Calidad en la UCLM. Me interesa que los datos del laboratorio sean fiables, trazables y útiles.</p>
+      <div class="cta">
+        <a class="btn main" href="#contacto">Contactar</a>
+        <a class="btn alt" href="#experiencia">Ver experiencia</a>
+      </div>
+    </div>
+    <div class="dish" role="img" aria-label="Ilustración de una placa de Petri con colonias"><i></i><i></i><i></i></div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ PERFIL ============ -->
+<section id="perfil">
+  <div class="wrap profile">
+    <div>
+      <h2>Perfil</h2>
+      <p>Soy biotecnóloga y trabajo en control de calidad (QC) y análisis clínico. He adquirido mi base técnica en prácticas en el Grupo Centro Médico Estación y en Tradecorp.</p>
+      <p>He trabajado en la validación de ensayos y el procesamiento de muestras biológicas, siempre bajo protocolos estrictos de laboratorio. Automatizo flujos de trabajo y aplico tratamientos bioestadísticos con Python y R para ganar precisión y eficiencia en el manejo de datos.</p>
+      <p>Busco entornos exigentes donde seguir mejorando los procesos analíticos.</p>
+    </div>
+    <ul class="facts">
+      <li><b>Ahora</b><span>Máster en Innovación y Desarrollo de Alimentos de Calidad, UCLM</span></li>
+      <li><b>Base</b><span>Grado en Biotecnología, Universidad de Castilla-La Mancha</span></li>
+      <li><b>Herramientas</b><span>PCR, electroforesis, espectrofotometría, Python y R</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FORMACIÓN ============ -->
+<section id="formacion" class="alt-bg">
+  <div class="wrap">
+    <h2>Formación</h2>
+    <ol class="tl">
+
+      <!--
+        AÑADIR AQUÍ UNA NUEVA FORMACIÓN: copia este bloque y pégalo donde quieras.
+        Los más recientes arriba. Usa class="now" solo en lo que estás haciendo ahora.
+
+        <li>
+          <div class="when">2025</div>
+          <h3>Título del curso</h3>
+          <p class="where">Centro o institución</p>
+        </li>
+      -->
+
+      <li class="now"><div class="when">2026 – actualidad</div><h3>Máster en Innovación y Desarrollo de Alimentos de Calidad</h3><p class="where">Universidad de Castilla-La Mancha (UCLM)</p></li>
+      <li><div class="when">2021 – 2026</div><h3>Grado en Biotecnología</h3><p class="where">Universidad de Castilla-La Mancha (UCLM)</p></li>
+      <li><div class="when">2019 – 2021</div><h3>Bachillerato de Ciencias Puras</h3><p class="where">La Enseñanza</p></li>
+      <li><div class="when">2026</div><h3>Code in Place</h3><p class="where">Stanford</p></li>
+      <li><div class="when">2026</div><h3>Biotech Unveiled: Understanding the U.S. Biomedical Innovation Marketplace and its Global Role</h3><p class="where">Formación adicional</p></li>
+      <li><div class="when">2024</div><h3>Curso de Biotecnología de Carotenoides</h3><p class="where">Formación adicional</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIA ============ -->
+<section id="experiencia">
+  <div class="wrap">
+    <h2>Experiencia</h2>
+    <ol class="tl">
+
+      <!--
+        AÑADIR AQUÍ UNA NUEVA EXPERIENCIA: copia este bloque y pégalo encima de la más reciente.
+
+        <li>
+          <div class="when">2026</div>
+          <h3>Puesto</h3>
+          <p class="where">Empresa o laboratorio</p>
+          <p>Descripción breve de lo que hiciste.</p>
+        </li>
+      -->
+
+      <li class="now"><div class="when">2026</div><h3>Auxiliar de analista de calidad</h3><p class="where">Tradecorp</p><p>Procedimientos de control de calidad en un entorno industrial: ensayos analíticos, documentación y cumplimiento de los estándares internos de calidad.</p></li>
+      <li><div class="when">2025</div><h3>Auxiliar de analista de laboratorio</h3><p class="where">Grupo Centro Médico Estación · Laboratorio Bioclínico Ochando (Alicante)</p><p>Análisis de laboratorio clínico: procesamiento de muestras, técnicas analíticas y flujos de trabajo diagnósticos con control de calidad.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ HABILIDADES E IDIOMAS ============ -->
+<section id="habilidades" class="alt-bg">
+  <div class="wrap">
+    <h2>Habilidades e idiomas</h2>
+    <div class="skills">
+      <div>
+        <h3>Laboratorio</h3>
+        <ul class="chips">
+          <li>Biología molecular</li><li>PCR</li><li>Electroforesis en gel</li><li>Microbiología</li><li>Técnicas asépticas</li><li>Espectrofotometría</li><li>Análisis de muestras</li><li>Registro de datos</li>
+          <!-- AÑADIR AQUÍ: <li>Nueva habilidad</li> -->
+        </ul>
+      </div>
+      <div>
+        <h3>Software y datos</h3>
+        <ul class="chips"><li>Python</li><li>R</li><li>Microsoft Office</li><li>Bioestadística</li></ul>
+        <h3 style="margin-top:1.4rem">Competencias</h3>
+        <ul class="chips"><li>Trabajo en equipo</li><li>Atención al detalle</li><li>Comunicación científica</li><li>Resolución de problemas</li><li>Gestión del tiempo</li></ul>
+      </div>
+      <div>
+        <h3>Idiomas</h3>
+        <div class="lang"><div><span>Español</span><span>Nativo</span></div><div class="bar"><span style="width:100%"></span></div></div>
+        <div class="lang"><div><span>Inglés</span><span>B2</span></div><div class="bar"><span style="width:80%"></span></div></div>
+        <!-- AÑADIR AQUÍ OTRO IDIOMA: copia un bloque class="lang" y cambia el nombre, el nivel y el width (porcentaje) -->
+        <p style="color:var(--muted);font-size:.95rem;margin:1.2rem 0 0">Permiso B de conducir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos">
+  <div class="wrap">
+    <h2>Proyectos</h2>
+    <p class="lead">Aquí irán mis trabajos del máster, el TFG y otros proyectos de laboratorio y análisis de datos.</p>
+    <div class="cards">
+
+      <!--
+        AÑADIR AQUÍ UN PROYECTO REAL: copia este bloque, pégalo al principio
+        y borra una de las tarjetas "Próximamente" de abajo.
+
+        <article class="card real">
+          <span class="meta">2026 · Trabajo Fin de Grado</span>
+          <h3>Título del proyecto</h3>
+          <p>Dos o tres frases: qué problema abordaba, qué métodos usaste y qué resultado obtuviste.</p>
+          <a class="more" href="https://enlace-al-proyecto.com" target="_blank" rel="noopener">Ver proyecto</a>
+        </article>
+      -->
+
+      <article class="card"><span class="tag">Próximamente</span><h3>Trabajo Fin de Grado</h3><p>Título, objetivo, métodos y resultados principales.</p></article>
+      <article class="card"><span class="tag">Próximamente</span><h3>Proyecto del máster</h3><p>Desarrollo e innovación en alimentos de calidad.</p></article>
+      <article class="card"><span class="tag">Próximamente</span><h3>Análisis de datos con Python y R</h3><p>Automatización de flujos y bioestadística, con enlace al código.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICACIONES ============ -->
+<section id="publicaciones" class="alt-bg">
+  <div class="wrap">
+    <h2>Publicaciones</h2>
+    <p class="lead">Artículos, pósteres y comunicaciones a congresos aparecerán en esta sección.</p>
+    <div class="cards">
+
+      <!--
+        AÑADIR AQUÍ UNA PUBLICACIÓN REAL: copia este bloque y pégalo al principio.
+
+        <article class="card real">
+          <span class="meta">2026 · Revista o congreso</span>
+          <h3>Título de la publicación</h3>
+          <p>Autores: González-Martínez M., otros autores.</p>
+          <a class="more" href="https://doi.org/..." target="_blank" rel="noopener">Ver publicación</a>
+        </article>
+      -->
+
+      <article class="card"><span class="tag">Próximamente</span><h3>Primera publicación</h3><p>Autores, revista o congreso, año y enlace al DOI.</p></article>
+      <article class="card"><span class="tag">Próximamente</span><h3>Póster o comunicación</h3><p>Título, evento y resumen breve.</p></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ CONTACTO ============ -->
+<footer id="contacto">
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p>¿Tienes una oferta, una colaboración o una pregunta? Escríbeme y te respondo lo antes posible.</p>
+    <div class="links">
+      <a class="btn main" href="mailto:513mariagon@gmail.com">513mariagon@gmail.com</a>
+      <a class="btn alt" href="https://www.linkedin.com/in/maria-gonzalez-mtz" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn alt" href="tel:+34638484900">638 484 900</a>
+    </div>
+    <small>© 2026 María González Martínez</small>
+  </div>
+</footer>
+
+</body>
+</html>
